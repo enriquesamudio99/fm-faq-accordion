@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Font Families */
+  --ff-work-sans: 'Work Sans', sans-serif;
+
+  /* Colors */
+  --clr-white: hsl(0, 100%, 100%);
+  --clr-black: hsl(0, 0%, 0%);
+  --clr-purple-100: hsl(275, 100%, 97%);
+  --clr-purple-600: hsl(292, 16%, 49%);
+  --clr-purple-950: hsl(292, 42%, 14%);
+  --clr-violet-600: hsl(281, 83%, 54%);
+
+  /* Text Presets */
+  --text-preset-1: 700 3.5rem / 4.125rem var(--ff-work-sans);
+  --text-preset-2: 600 1.125rem / 1.3125rem var(--ff-work-sans);
+  --text-preset-3: 400 1rem / 1.5 var(--ff-work-sans);
+
+  /* Spacings */
+  --spacing-100: .5rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--clr-purple-100);
+  color: var(--clr-black);
+  font: var(--text-preset-3);
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-bg-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 232px;
+}
+
+@media (min-width: 40rem) {
+  .main-bg-mobile {
+    display: none;
+  }
+}
+
+.main-bg-desktop {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 320px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+@media (min-width: 40rem) {
+  .main-bg-desktop {
+    display: block;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 37.5rem;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 40rem) {
+  .container {
+    padding: 0;
+  }
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  background-color: var(--clr-white);
+  border-radius: .5rem;
+  border: 1px solid #E3E3E3;
+  box-shadow: 0 2rem 3.5rem rgba(80, 0, 118, .1);
+  margin: 2rem 0;
+}
+
+.card__content {
+  padding: var(--spacing-300);
+}
+
+@media (min-width: 40rem) {
+  .card__content {
+    padding: var(--spacing-500);
+  }
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.card__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (min-width: 40rem) {
+  .card__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.card__title {
+  font-size: 2rem;
+  line-height: 2.375rem;
+  font-weight: 700;
+  color: var(--clr-purple-950);
+}
+
+@media (min-width: 40rem) {
+  .card__title {
+    font: var(--text-preset-1);
+  }
+}
+
+.accordion {
+  margin-top: var(--spacing-300);
+}
+
+@media (min-width: 40rem) {
+  .accordion {
+    margin-top: var(--spacing-400);
+  }
+}
+
+.accordion-item {
+  padding: var(--spacing-300) 0;
+  border-bottom: 1px solid var(--clr-purple-100);
+}
+
+.accordion-item:first-child {
+  padding-top: 0;
+}
+
+.accordion-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.accordion-header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-300);
+}
+
+.accordion-header__title {
+  transition: color 0.2s ease-in-out;
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  font-weight: 600;
+  color: var(--clr-purple-950);
+}
+
+@media (min-width: 40rem) {
+  .accordion-header__title {
+    font: var(--text-preset-2);
+  }
+}
+
+.accordion-header:hover .accordion-header__title {
+  color: var(--clr-violet-600);
+}
+
+.accordion-header__icon {
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
+.accordion-body__text {
+  font-size: .875rem;
+  line-height: 1.5;
+  color: var(--clr-purple-600);
+  padding-top: var(--spacing-300);
+}
+
+@media (min-width: 40rem) {
+  .accordion-body__text {
+    font: var(--text-preset-3);
+  }
+}
