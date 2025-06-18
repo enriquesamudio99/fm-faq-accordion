@@ -170,6 +170,12 @@ a {
   margin: 2rem 0;
 }
 
+@media (min-width: 40rem) {
+  .card {
+    border-radius: 1rem;
+  }
+}
+
 .card__content {
   padding: var(--spacing-300);
 }
